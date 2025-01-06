@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Administrare Filme</h1>
+    <?php if (!isset($_SESSION["request_user"]) || ($_SESSION["request_user"]["rol_id"] != 1)){
+    header("Location: /aplicatie_cinema/admin");
+    }?>
     <table>
         <tr>
             <td colspan=7 align=right>

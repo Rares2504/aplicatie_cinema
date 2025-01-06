@@ -23,6 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adaugă Film</title>
+    <?php if (!isset($_SESSION["request_user"]) || ($_SESSION["request_user"]["rol_id"] != 1)){
+    header("Location: /aplicatie_cinema/admin");
+    }?>
     <link rel="stylesheet" type="text/css" href="/aplicatie_cinema/app/views/movies/CSS/style.css">
 </head>
 <body>
