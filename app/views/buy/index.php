@@ -33,10 +33,11 @@
             <th></th>
             <th></th> 
         </tr>
-        <form method="POST" action="selectPlace.php">  
+         
         <?php 
             foreach ($screenings as $screening) {
         ?>
+         <form method="POST" action="selectPlace.php">
             <tr>
                 <td width="100">
                 <img src="../movies/displayImage.php?id= <?php echo $screening["film_id"]?>" width="100">
@@ -60,7 +61,9 @@
                     <button>Cumpara</button>
                                    
                 </td>
-            </tr>  
+            </tr> 
+            </form> 
             <?php } ?>
+        
 </body>
 </html>
