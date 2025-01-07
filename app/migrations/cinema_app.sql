@@ -34,33 +34,16 @@ CREATE TABLE proiectie (
     FOREIGN KEY (sal_id) REFERENCES sala(sal_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- Crearea tabelului Client
-CREATE TABLE client (
-    cli_id INT PRIMARY KEY AUTO_INCREMENT,
-    nume VARCHAR(100) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    user VARCHAR(50) NOT NULL UNIQUE,
-    parola VARCHAR(255) NOT NULL,
-    telefon VARCHAR(15)
-);
-
--- Crearea tabelului Comanda
-CREATE TABLE comanda (
-    com_id INT PRIMARY KEY AUTO_INCREMENT,
-    cli_id INT NOT NULL,
-    pro_id INT NOT NULL,
-    data DATETIME NOT NULL,
-    FOREIGN KEY (cli_id) REFERENCES client(cli_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (pro_id) REFERENCES proiectie(pro_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
 -- Crearea tabelului Bilet
 CREATE TABLE bilet (
     bil_id INT PRIMARY KEY AUTO_INCREMENT,
-    com_id INT NOT NULL,
+    pro_id INT NOT NULL,
+    uti_id INT NOT NULL,
     rand INT NOT NULL,
     loc INT NOT NULL,
-    FOREIGN KEY (com_id) REFERENCES Comanda(com_id) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (pro_id) REFERENCES proiectie(pro_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (uti_id) REFERENCES utilizatori(uti_id) ON DELETE CASCADE ON UPDATE CASCADE
+
 );
 
 --Inserare sala 

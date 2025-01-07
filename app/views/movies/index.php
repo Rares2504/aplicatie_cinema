@@ -36,7 +36,7 @@
                 <td><?= $movie["rating"] ?></td>
                 <td><?= $movie["descriere"] ?></td>
                 <td>
-                    <img src="displayImage.php?id=<?php echo $movie["fil_id"]?>" width="100" >
+                    <img src="displayImage.php?id=<?php echo $movie["fil_id"]?>" width="100">
                  </td>
                 <td align=right>
                     <button onclick="window.location.href='editMovie.php?fil_id=<?= $movie['fil_id'] ?>'">Modifica</button>

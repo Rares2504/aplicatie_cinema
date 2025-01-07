@@ -12,6 +12,7 @@
     header("Location: /aplicatie_cinema/admin");
 }
 ?>
+
     <form method="GET" action="index.php">
         <label for="search">Selecteaza un film:</label>
         <select name="search" id="search">
