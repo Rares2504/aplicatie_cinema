@@ -19,11 +19,20 @@
                 places.value = places.value.replace((element.getAttribute("place") + ","),"");
             }
         }
+
+        function verifyPlaces() {
+            places = document.querySelector('[name="places"]');
+            if (places.value == "") {
+                alert("Va rugam sa selectati cel putin un loc");
+                return false;
+            }
+            return true;
+        }
     </script>
 </head>
 <body>
     <form method="post" action="doSelectPlace.php">
-    <p>Cumpara bilet pentru filmul <b><?= $details['film_titlu']?></b></p>
+    <p>Cumpara bilete pentru filmul <b><?= $details['film_titlu']?></b></p>
     <p>Difuzat in data de <b><?= $details['proiectie_data']?></b> la ora <b><?= $details['proiectie_ora']?></b>
     <?php
         echo "<table border='0' style='border-spacing: 10px;'>";
@@ -45,10 +54,11 @@
         }
         
     ?>
-    <tr><td></td><td align="left" colspan="<?=$details["sala_locuri_rand"]?>"><button type="submit" > Cumpara bilete </button></td></tr>
+    <tr><td></td><td align="left" colspan="<?=$details["sala_locuri_rand"]?>">Email: <input type="text" name="user_email" id="user_email" required></td></tr>
+    <tr><td></td><td align="left" colspan="<?=$details["sala_locuri_rand"]?>"><button type="submit" onClick="return verifyPlaces()"> Cumpara bilete </button></td></tr>
     <tr><td></td><td align="right" colspan="<?=$details["sala_locuri_rand"]?>"><a href="index.php">Inapoi la proiectii</a></td></tr>
     </table>
-    <input type="hidden" name="places" id="places" value="">
+    <input type="hidden" name="places" id="places" value="" required>
     <input type="hidden" name="title" id="title" value="<?= $details['film_titlu']?>">
     <input type="hidden" name="day" id="day" value="<?= $details['proiectie_data']?>">
     <input type="hidden" name="hour" id="hour" value="<?= $details['proiectie_ora']?>">

@@ -38,7 +38,8 @@ CREATE TABLE proiectie (
 CREATE TABLE bilet (
     bil_id INT PRIMARY KEY AUTO_INCREMENT,
     pro_id INT NOT NULL,
-    uti_id INT NOT NULL,
+    uti_id INT,
+    email VARCHAR(100),
     rand INT NOT NULL,
     loc INT NOT NULL,
     FOREIGN KEY (pro_id) REFERENCES proiectie(pro_id) ON DELETE CASCADE ON UPDATE CASCADE,
