@@ -6,8 +6,8 @@
     <title>Bilete achizitionate</title>
 </head>
 <body>
-    <table border=1>
-        <tr><td><?= $message ?></td></tr>
+    <table border=1 width="400">
+        <tr><td width="100%"><?= $message ?></td></tr>
         <tr><td><button onclick="window.print()">Printează biletele</button></td></tr>
         <tr><td><a href="index.php">Inapoi la proiectii</a></td></tr>
     </table>

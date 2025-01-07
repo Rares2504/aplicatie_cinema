@@ -58,14 +58,14 @@
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption
                 $mail->Port       = 587; // TCP port to connect to
 
-                $mail->setFrom('rares.ungureanu25@gmail.com', 'Rares Andrei Ungureanu');
-                $mail->addAddress('laura_maran@yahoo.com', 'Laura Maran'); // Add a recipient
+                $mail->setFrom('rares.ungureanu25@gmail.com');
+                $mail->addAddress($_POST["user_email"]); // Add a recipient
                 $mail->isHTML(true); // Set email format to HTML
                 $mail->Subject = "Achizitionare bilete film";
                 $mail->Body    = $message;
                 $mail->send();
             } catch (Exception $e) {
-                echo "Email-ul nu a putut fi trimis. Mailer Error: {$mail->ErrorInfo}";
+                echo "Email-ul nu a putut fi trimis. Eroare: {$mail->ErrorInfo}";
             }
 
 
