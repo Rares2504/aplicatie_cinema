@@ -9,6 +9,10 @@
     require_once 'phpmailer/src/SMTP.php';
 
     class BuyController{
+        public static function redirect(){
+            header("Location: /aplicatie_cinema/buy/index.php");
+        }
+
         public static function index(){
             if (isset($_GET['search']) && !empty($_GET['search'])) {
                 $screenings = Buy::getFutureScreeningsById($_GET['search']);

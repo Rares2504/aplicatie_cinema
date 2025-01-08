@@ -13,6 +13,7 @@
         "aplicatie_cinema/admin.php" => ["AuthController", "admin"],
         "aplicatie_cinema/loginAdmin.php" => ["AuthController", "loginAdmin"],
         "aplicatie_cinema/logoutAdmin.php" => ["AuthController", "logoutAdmin"],
+        "aplicatie_cinema" => ["BuyController", "redirect"],
         "aplicatie_cinema/buy/index.php" => ["BuyController", "index"],
         "aplicatie_cinema/buy/selectPlace.php" => ["BuyController", "selectPlace"],
         "aplicatie_cinema/buy/doSelectPlace.php" => ["BuyController", "doSelectPlace"],
