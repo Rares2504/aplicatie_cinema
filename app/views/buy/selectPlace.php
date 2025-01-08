@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/aplicatie_cinema/app/views/buy/CSS/selectPlace.css">
     <title>Document</title>
     <script>
         // Definirea unei funcții JavaScript

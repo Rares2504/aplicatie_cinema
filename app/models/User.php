@@ -24,7 +24,7 @@ class User{
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public static function createUser($nume, $prenume, $email, $parola, $rol_id){
+    public static function createUser($nume, $prenume, $email, $parola){
         global $pdo;
         $sql = "INSERT INTO utilizatori(nume, prenume, email, parola, rol_id) 
                 VALUES (:nume, :prenume, :email, :parola, :rol_id)";
@@ -34,7 +34,7 @@ class User{
             ":prenume" => $prenume,
             ":email" => $email,
             ":parola" => $parola,
-            ":rol_id" => $rol_id
+            ":rol_id" => 2
         ));
     }
 

@@ -37,16 +37,11 @@
         <?php 
             foreach ($screenings as $screening) {
         ?>
-         <form method="POST" action="selectPlace.php">
             <tr>
-                <td width="100">
-                <img src="../movies/displayImage.php?id= <?php echo $screening["film_id"]?>" width="100">
-                </td>
-                <td valign="top" width="200"><?= $screening["film_titlu"] ?>
-                <p>
-                <?= $screening["film_descriere"] ?>
-                </td>
-                <td width="200" valign="top">
+            <form method="POST" action="selectPlace.php">
+                <td><img src="../movies/displayImage.php?id= <?php echo $screening["film_id"]?>" width="100"></td>
+                <td width="600px" valign="top"><B><?= $screening["film_titlu"] ?></B><P><?= $screening["film_descriere"] ?></td>
+                <td valign="top">
                     <?= $screening["proiectie_data"] ?> <select name="pro_id" id="pro_id" valign="top">
                     <?php
                     $proiectii = explode(",", $screening["ore_difuzare"]);
@@ -58,11 +53,11 @@
                     </select>
                 </td>
                 <td align = right valign="top">
-                    <button>Cumpara</button>
-                                   
+                    <button>Cumpara</button>          
                 </td>
+                </form> 
             </tr> 
-            </form> 
+            
             <?php } ?>
         
 </body>

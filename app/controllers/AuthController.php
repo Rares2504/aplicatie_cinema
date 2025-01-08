@@ -2,6 +2,9 @@
 require_once "app/models/User.php";
 
 class AuthController {
+    public static function admin(){
+        require_once 'app/views/admin/index.php';
+    }
 
     public static function loginAdmin(){
      
