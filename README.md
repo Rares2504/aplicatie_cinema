@@ -1,8 +1,8 @@
-# Cinema Booking System
+# Aplicatie Cinema
 
 ## Overview
 
-Cinema Booking System is a PHP-based web application designed using the MVC (Model-View-Controller) architecture. This project enables efficient management of cinema operations, including movie scheduling, ticket booking, and real-time seat availability tracking. The application supports two types of users:
+Aplicatie Cinema is a PHP-based web application designed using the MVC (Model-View-Controller) architecture. This project enables efficient management of cinema operations, including movie scheduling, ticket booking, and real-time seat availability tracking. The application supports two types of users:
 
 - **Admins**: Manage movies, screenings, cinema halls, and schedules.
 - **Regular Users**: Browse movies, book tickets, select seats in real time, and receive tickets via email or print them.
@@ -49,13 +49,13 @@ Navigate to your `htdocs` directory and clone the project:
 
 ```sh
 cd /path/to/xampp/htdocs
- git clone https://github.com/your-repo/cinema-booking.git
-cd cinema-booking
+git clone https://github.com/your-repo/aplicatie-cinema.git
+cd aplicatie-cinema
 ```
 
 #### 3. Configure the Database
 
-- Open phpMyAdmin and create a database named `cinema_booking`.
+- Open phpMyAdmin and create a database named `aplicatie_cinema`.
 - Import the SQL schema from `migrations/cinema_app.sql`.
 - Update `config/pdo.php` with your database credentials.
 
@@ -78,7 +78,7 @@ Use the SQL files in `migrations/` to set up the database schema.
 - Open a browser and navigate to:
 
 ```
-http://localhost/cinema-booking/
+http://localhost/aplicatie-cinema/
 ```
 
 ## Usage
@@ -96,18 +96,33 @@ http://localhost/cinema-booking/
 - **Book tickets** securely.
 - Receive tickets via **email** or print them.
 
-## Adding a New Route
+## Routes
 
-Define a new route in `config/routes.php`:
+Below are the main routes used in the application:
 
 ```php
 $routes = [
-  'path/to/your/route' => ['ControllerName', 'methodName'],
+    "aplicatie_cinema/movies/index.php" => ["MovieController", "index"],
+    "aplicatie_cinema/movies/createMovie.php" => ["MovieController", "createMovie"],
+    "aplicatie_cinema/movies/displayImage.php" => ["MovieController", "displayImage"],
+    "aplicatie_cinema/movies/deleteMovie.php" => ["MovieController", "deleteMovie"],
+    "aplicatie_cinema/movies/editMovie.php" => ["MovieController", "editMovie"],
+    "aplicatie_cinema/movies/doEditMovie.php" => ["MovieController", "doEditMovie"],
+    "aplicatie_cinema/screenings/index.php" => ["ScreeningController", "index"],
+    "aplicatie_cinema/screenings/createScreening.php" => ["ScreeningController", "createScreening"],
+    "aplicatie_cinema/screenings/deleteScreening.php" => ["ScreeningController", "deleteScreening"],
+    "aplicatie_cinema/admin" => ["AuthController", "admin"],
+    "aplicatie_cinema/admin.php" => ["AuthController", "admin"],
+    "aplicatie_cinema/loginAdmin.php" => ["AuthController", "loginAdmin"],
+    "aplicatie_cinema/logoutAdmin.php" => ["AuthController", "logoutAdmin"],
+    "aplicatie_cinema" => ["BuyController", "redirect"],
+    "aplicatie_cinema/buy/index.php" => ["BuyController", "index"],
+    "aplicatie_cinema/buy/selectPlace.php" => ["BuyController", "selectPlace"],
+    "aplicatie_cinema/buy/doSelectPlace.php" => ["BuyController", "doSelectPlace"],
 ];
 ```
-
-Add the corresponding method in the specified controller.
 
 ## Database Queries
 
 The application uses **PDO** for secure database interactions. See `config/pdo.php` for connection setup and example queries.
+
